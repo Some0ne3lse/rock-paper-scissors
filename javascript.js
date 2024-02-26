@@ -8,7 +8,7 @@ const options = ['rock', 'paper', 'scissors'];
 
 
 function getComputerChoice() {
-  let idx = Math.round(Math.random() * (3 - 1));
+  let idx = Math.floor(Math.random() * options.length);
   return options[idx];
 }
 
@@ -16,14 +16,14 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-let playerSelection = 'paper';
+// let playerSelection = 'paper';
 
-// let playerSelection = prompt('Please enter your choice').toLowerCase();
+let playerSelection;
 
-let computerSelection = getComputerChoice();
-console.log(computerSelection);
+let computerSelection;
 
-function playRound(playerSelection, computerSelection) {
+
+function playRound() {
   if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
     if (playerSelection === computerSelection) {
       return 'It is a tie!';
@@ -39,4 +39,15 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function playGame() {
+  for (let i = 1; i <= 5; ++i) {
+    computerSelection = getComputerChoice();
+
+    playerSelection = prompt('Please enter your choice').toLowerCase();
+
+    console.log(playRound());
+  }
+  return 'Game Over';
+}
+
+console.log(playGame());

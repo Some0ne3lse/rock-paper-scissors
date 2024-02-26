@@ -12,6 +12,10 @@ function getComputerChoice() {
   return options[idx];
 }
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 let playerSelection = prompt('Please enter your choice').toLowerCase();
 
 let computerSelection = getComputerChoice();

@@ -40,15 +40,3 @@ function playRound(playerSelection, computerSelection) {
 }
 
 console.log(playRound(playerSelection, computerSelection));
-
-// if (playerSelection !== 'rock' || playerSelection !== 'paper' || playerSelection !== 'scissors') {
-//   alert('Not an option');
-// } else if (playerSelection === computerSelection) {
-//   alert('It is a tie!');
-// } else if ((playerSelection === 'ROCK' && computerSelection === 'PAPER') ||
-//   (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') ||
-//   (playerSelection === 'SCISSORS' && computerSelection === 'ROCK')) {
-//   alert(`You Lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`);
-// } else {
-//   alert(`You Win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`);
-// }

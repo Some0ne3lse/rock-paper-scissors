@@ -22,7 +22,9 @@ let playerSelection;
 let computerSelection;
 
 
-function playRound() {
+
+function playRound(playerSelection) {
+  computerSelection = getComputerChoice();
   if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
     if (playerSelection === computerSelection) {
       return 'It is a tie!';
@@ -38,15 +40,42 @@ function playRound() {
   }
 }
 
-function playGame() {
-  for (let i = 1; i <= 5; ++i) {
-    computerSelection = getComputerChoice();
+let all = document.querySelector('#all');
 
-    playerSelection = prompt('Please enter your choice').toLowerCase();
+all.addEventListener('click', (event) => {
+  let target = event.target;
 
-    console.log(playRound());
+  switch (target.id) {
+    case 'rock':
+      results.textContent = playRound('rock');
+      break;
+    case 'paper':
+      results.textContent = playRound('paper');
+      break;
+    case 'scissors':
+      results.textContent = playRound('scissors');
+
+      break;
   }
-  return 'Game Over';
-}
+})
 
-console.log(playGame());
+const resultsContainer = document.querySelector('#results');
+
+const results = document.createElement('div');
+results.classList.add('resultsClass');
+
+
+resultsContainer.appendChild(results);
+
+
+
+// function playGame() {
+//   for (let i = 1; i <= 5; ++i) {
+//     computerSelection = getComputerChoice();
+
+//     playerSelection = prompt('Please enter your choice').toLowerCase();
+
+//     console.log(playRound());
+//   }
+//   return 'Game Over';
+// }
